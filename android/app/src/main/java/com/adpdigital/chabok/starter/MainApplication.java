@@ -4,6 +4,7 @@ import android.app.Application;
 import android.content.Context;
 
 import com.adpdigital.push.AdpPushClient;
+import com.adpdigital.push.LogLevel;
 import com.adpdigital.push.config.Environment;
 import com.facebook.react.PackageList;
 import com.facebook.react.ReactApplication;
@@ -49,6 +50,7 @@ public class MainApplication extends Application implements ReactApplication {
         SoLoader.init(this, /* native exopackage */ false);
         initializeFlipper(this); // Remove this line if you don't want Flipper enabled
         AdpPushClient.configureEnvironment(Environment.SANDBOX);
+        AdpPushClient.setLogLevel(LogLevel.VERBOSE);
     }
 
     /**
